@@ -35,4 +35,35 @@ if ($emails) {
 // Close the connection
 imap_close($inbox);
 
+// Function to find similar words in a string
+function findSimilarWordsInString($inputWord, $wordString) {
+    $wordList = explode(' ', $wordString);
+    $similarWords = [];
+
+    foreach ($wordList as $word) {
+        similar_text($inputWord, $word, $percent);
+
+        // You can adjust the similarity threshold as needed (e.g., 80% similarity)
+        if ($percent >= 80) {
+            $similarWords[] = $word;
+        }
+    }
+
+    return $similarWords;
+}
+
+// Example word string
+$wordString = 'Your server back up is successful';
+
+// Example input word
+$inputWord = 'success';
+
+// Find similar words in the string
+$similarWords = findSimilarWordsInString($inputWord, $wordString);
+
+// Display results
+echo "Input Word: $inputWord<br>";
+echo "Word String: $wordString<br>";
+echo "Similar Words: " . implode(', ', $similarWords) . "<br>";
+
 ?>
