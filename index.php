@@ -1,5 +1,6 @@
 <?php
 
+/*
 // Set your email credentials and server details
 $email = 'your_email@example.com';
 $password = 'your_email_password';
@@ -34,6 +35,7 @@ if ($emails) {
 
 // Close the connection
 imap_close($inbox);
+*/
 
 // Function to find similar words in a string
 function findSimilarWordsInString($inputWord, $wordString) {
